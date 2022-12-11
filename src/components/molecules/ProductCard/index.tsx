@@ -24,7 +24,7 @@ export default function ProductCard(params: TProduct) {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
-    dispatch(addToCart({ ...params, quantity: 0 }));
+    dispatch(addToCart({ ...params, quantity: 1 }));
     setOpen(true);
   };
 
