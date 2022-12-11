@@ -1,14 +1,16 @@
 import React from 'react';
-import { Typography } from '@mui/material';
 
 import PageLayout from '../../templates/PageLayout';
-import Counter from '../../molecules/Counter';
+import ProductList from '../../organisms/ProductList';
+
+import { useAppSelector } from '../../../app/hooks';
 
 export default function HomePage() {
+  const products = useAppSelector((state) => state.products.items);
+
   return (
-    <PageLayout title="Home" test-dataid="home-page">
-      <Typography component="h1">Home Page</Typography>
-      <Counter />
+    <PageLayout title="Product List">
+      <ProductList products={products} />
     </PageLayout>
   );
 }

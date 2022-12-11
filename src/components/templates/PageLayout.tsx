@@ -1,6 +1,7 @@
-import { Container } from '@mui/material';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Container } from '@mui/material';
+import Navbar from '../organisms/Navbar';
 
 export default function PageLayout(params: {
   title: string;
@@ -10,10 +11,12 @@ export default function PageLayout(params: {
   return (
     <>
       <Helmet>
-        <title>{title}</title>
+        <title>{title ? `${title} | ` : ''} Shopping list</title>
       </Helmet>
-
-      <Container>{children}</Container>
+      <Navbar />
+      <Container maxWidth="xl" sx={{ py: 2 }}>
+        {children}
+      </Container>
     </>
   );
 }

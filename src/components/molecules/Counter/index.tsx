@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Link, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 
 import { decrement, increment } from '../../../features/counter/counterSlice';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
