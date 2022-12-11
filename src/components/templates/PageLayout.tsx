@@ -11,7 +11,7 @@ export default function PageLayout(params: {
   return (
     <>
       <Helmet>
-        <title>{title ? `${title} | ` : ''} Shopping list</title>
+        <title>{title ? `${title} | ` : ''} Shopping list app</title>
       </Helmet>
       <Navbar />
       <Container maxWidth="xl" sx={{ py: 2 }}>

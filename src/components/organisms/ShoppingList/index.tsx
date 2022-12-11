@@ -12,6 +12,7 @@ import {
   ListItem,
   ListItemAvatar,
   ListItemText,
+  Tooltip,
   Typography,
 } from '@mui/material';
 import ExpandIcon from '@mui/icons-material/Expand';
@@ -48,16 +49,18 @@ export default function ShoppingList() {
 
   return (
     <Box>
-      <Button
-        variant="contained"
-        aria-label="open drawer"
-        onClick={handleDrawerOpen}
-      >
-        Shopping list
-        <Badge badgeContent={totals.quantity} color="success">
-          <ShoppingBagIcon />
-        </Badge>
-      </Button>
+      <Tooltip title="Open cart">
+        <Button
+          variant="contained"
+          aria-label="open drawer"
+          onClick={handleDrawerOpen}
+        >
+          Shopping list
+          <Badge badgeContent={totals.quantity} color="success">
+            <ShoppingBagIcon />
+          </Badge>
+        </Button>
+      </Tooltip>
       <Drawer anchor="bottom" open={open} onClose={handleDrawerClose}>
         <Container maxWidth="xl" sx={{ py: 2 }}>
           <Button variant="outlined" onClick={handleDrawerClose}>
